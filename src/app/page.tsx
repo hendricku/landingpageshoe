@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+
 import ProductGrid from './components/ProductGrid';
 
 export default function ShoeLandingPage() {
