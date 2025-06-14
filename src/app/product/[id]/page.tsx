@@ -48,14 +48,14 @@ const products = [
     price: 65.0,
     image: '/vans.jpg',
     description: 'The iconic side stripe shoe that started it all. Features durable suede and canvas upper with padded collars for enhanced comfort.'
-  },
-  {
-    id: '7',
-    name: 'Reebok Classic',
-    price: 80.0,
-    image: '/reebok.jpg',
-    description: 'A heritage-inspired design that stands the test of time. The Reebok Classic features soft leather upper and EVA midsole for lightweight cushioning.'
   }
+  // {
+  //   id: '7',
+  //   name: 'Reebok Classic',
+  //   price: 80.0,
+  //   image: '/reebok.jpg',
+  //   description: 'A heritage-inspired design that stands the test of time. The Reebok Classic features soft leather upper and EVA midsole for lightweight cushioning.'
+  // }
 ];
 
 export default function ProductDetail() {
