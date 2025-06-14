@@ -1,41 +1,87 @@
-import Image from 'next/image';
-import { Product } from '@/types';
+'use client';
 
-// Updated shoe product list
-const showProducts: Product[] = [
-  {
-    id: '1',
-    name: 'Nike Air Max 270',
-    price: 159.99,
-    image: '/nikeair.jpg',
-    isFeatured: true,
-    isFree: false
-  },
-  {
-    id: '2',
-    name: 'Adidas Ultraboost',
-    price: 180.0,
-    image: '/Adidas.jpg',
-    isFeatured: false,
-    isFree: false
-  },
-  {
-    id: '3',
-    name: 'Converse Chuck Taylor',
-    price: 75.0,
-    image: '/Converse.jpg',
-    isFeatured: false,
-    isFree: true
-  }
-];
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function ProductGrid() {
+  const router = useRouter();
+
+  const products = [
+    {
+      id: '1',
+      name: 'Nike Air Max',
+      price: 139.99,
+      image: '/nike.jpg',
+      isFeatured: true,
+      description: 'Revolutionary Air cushioning technology meets modern design. The Nike Air Max delivers superior comfort with its iconic visible Air unit and breathable mesh upper.',
+      isFree: true
+    },
+    {
+      id: '2',
+      name: 'Adidas Ultraboost',
+      price: 180.0,
+      image: '/adidas.jpg',
+      isFeatured: false,
+      description: 'Experience endless energy with Adidas Ultraboost. Featuring responsive Boost cushioning and a Primeknit upper that adapts to your foot\'s movement.',
+      isFree: false
+    },
+    {
+      id: '3',
+      name: 'Converse Chuck Taylor',
+      price: 75.0,
+      image: '/converse.jpg',
+      isFeatured: false,
+      description: 'A timeless classic that never goes out of style. The Chuck Taylor All-Star combines durability with iconic design for everyday versatility.',
+      isFree: true
+    },
+    {
+      id: '4',
+      name: 'Puma RS-X',
+      price: 110.0,
+      image: '/puma.jpg',
+      isFeatured: true,
+      description: 'Embrace the chunky sneaker trend with the Puma RS-X. Features bold design elements and Running System technology for maximum comfort.',
+      isFree: false
+    },
+    {
+      id: '5',
+      name: 'New Balance 574',
+      price: 89.99,
+      image: '/newbalance.jpg',
+      isFeatured: false,
+      description: 'Classic heritage design meets modern comfort. The New Balance 574 offers superior cushioning and stability for everyday wear.',
+      isFree: true
+    },
+    {
+      id: '6',
+      name: 'Vans Old Skool',
+      price: 65.0,
+      image: '/vans.jpg',
+      isFeatured: false,
+      description: 'The iconic side stripe shoe that started it all. Features durable suede and canvas upper with padded collars for enhanced comfort.',
+      isFree: true
+    },
+    {
+      id: '7',
+      name: 'Reebok Classic',
+      price: 80.0,
+      image: '/reebok.jpg',
+      isFeatured: false,
+      description: 'A heritage-inspired design that stands the test of time. The Reebok Classic features soft leather upper and EVA midsole for lightweight cushioning.',
+      isFree: true
+    }
+  ];
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 bg-black p-6">
-      {showProducts.map((product) => (
-        <div
+    <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {products.map((product) => (
+        <motion.div
           key={product.id}
-          className="bg-[#1a1a1a] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
+          onClick={() => router.push(`/product/${product.id}`)}
+          className="cursor-pointer"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
           <div className="relative w-full h-[400px] bg-black">
             {product.isFeatured && (
@@ -59,11 +105,11 @@ export default function ProductGrid() {
             </div>
             <div className="flex items-center justify-between text-sm">
               <span className="text-gray-400">${product.price.toFixed(2)} value</span>
-              {/* {product.isFree && <span className="text-green-400 font-medium">Free</span>} */}
+     
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
