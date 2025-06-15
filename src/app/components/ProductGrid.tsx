@@ -21,7 +21,7 @@ export default function ProductGrid() {
       id: '2',
       name: 'Adidas Ultraboost',
       price: 180.0,
-      image: '/adidas.jpg',
+      image: '/Adidas.jpg',
       isFeatured: false,
       description: 'Experience endless energy with Adidas Ultraboost. Featuring responsive Boost cushioning and a Primeknit upper that adapts to your foot\'s movement.',
       isFree: false
@@ -30,7 +30,7 @@ export default function ProductGrid() {
       id: '3',
       name: 'Converse Chuck Taylor',
       price: 75.0,
-      image: '/converse.jpg',
+      image: '/Converse.jpg',
       isFeatured: false,
       description: 'A timeless classic that never goes out of style. The Chuck Taylor All-Star combines durability with iconic design for everyday versatility.',
       isFree: true
