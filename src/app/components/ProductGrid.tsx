@@ -59,7 +59,7 @@ export default function ProductGrid() {
       price: 65.0,
       image: '/vans.jpg',
       isFeatured: false,
-      description: 'The iconic side stripe shoe that started it all. Features durable suede and canvas upper with padded collars for enhanced comfort.',
+      description: 'The iconic ,side stripe shoe that started it all. Features durable suede and canvas upper with padded collars for enhanced comfort.',
       isFree: true
     }
     // {
